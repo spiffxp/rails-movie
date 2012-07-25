@@ -1,4 +1,4 @@
-name: movies
+name: rails-movie
 instances: 1
 framework:
   type: rails3
@@ -6,8 +6,3 @@ framework:
 mem: 128
 services:
   movies-mysql: mysql
-#processes:
-#  web: bundle exec rails server
-#hooks:
-#post-staging:
-#- bundle exec rake db:create
