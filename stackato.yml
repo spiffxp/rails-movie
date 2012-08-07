@@ -4,5 +4,7 @@ framework:
   type: rails3
   runtime: ruby19
 mem: 128
+min_version:
+  client: 1.4.3
 services:
-  movies-mysql: mysql
+  ${name}-db: mysql
