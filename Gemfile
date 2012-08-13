@@ -8,6 +8,8 @@ gem 'rails', '3.0.10'
 gem 'mysql2', '~> 0.2.11'
 gem 'rake', '0.9.2.2'
 
+gem 'thin'
+
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
