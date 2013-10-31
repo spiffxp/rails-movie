@@ -1,8 +1,12 @@
 name: rails-movie
-instances: 1
 framework:
-  type: rails3
-  runtime: ruby19
+  type: buildpack
+env:
+  BUILDPACK_URL: git://github.com/MTNSatelliteComm/stackato-buildpack-ruby.git
+  RAILS_ENV: production
+  RACK_ENV: production
+processes:
+    web: bundle exec rails server
 mem: 128
 min_version:
   client: 1.4.3
