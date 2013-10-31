@@ -1,24 +1,53 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.0.10'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'mysql2', '~> 0.2.11'
-gem 'rake', '0.9.2.2'
-
+# rake needs to be before rails for stackato
+gem 'rake', '10.1.0'
+gem 'rails', '3.2.13'
+gem 'nokogiri', '1.6.0'
 gem 'thin'
+gem 'activeadmin', '0.6.0'
+gem 'af', '0.3.18.12'
+gem 'bunny', git: 'https://github.com/ruby-amqp/bunny.git'
+gem 'ci_reporter', '1.9.0'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+gem 'dont_validate', '0.0.1'
+gem 'doorkeeper', '0.6.7'
+gem 'jquery-rails', '2.2.1'
+gem 'whenever', '0.8.4', :require => false
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :assets do
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'less-rails'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'therubyracer'
+  gem 'twitter-bootstrap-rails'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :demo, :stage, :production do
+  gem 'mysql2', '0.3.11'
+end
+
+group :test, :development do
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'debugger'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'sqlite3'
+  gem 'terminal-notifier-guard'
+end
+
+group :test, :development, :demo do
+  gem 'factory_girl_rails'
+  gem 'forgery'
+  gem 'vcr'
+end
+
+group :test do
+  gem 'launchy'
+  gem 'webmock'
+end
+
