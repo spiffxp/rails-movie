@@ -1,4 +1,4 @@
-name: rails-movie
+name: rails-movie-spiffxp
 framework:
   type: buildpack
 env:
@@ -12,3 +12,4 @@ min_version:
   client: 1.4.3
 services:
   ${name}-db: mysql
+url: rails-movie-spiffxp.core1.platform.central.mtn.mtnsatcloud.com
